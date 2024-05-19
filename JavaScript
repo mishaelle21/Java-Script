@@ -1,0 +1,38 @@
+const NFTs = [] // creating a vaiable to hold the NFTs
+
+//This line declares a function named mintNFT which takes four parameters: name, eyecolor, age, and gender.
+function mintNFT (name,eyecolor,age,gender) {
+    const NFT = {
+        "name": name,
+        "eyecolor": eyecolor,
+        "age": age,
+        "gender": gender,
+    }
+// It adds the newly minted NFT to the list of NFTs.
+    NFTs.push(NFT);
+//printing amessage to the console indicating that an NFT with the specified name has been minted.
+    console.log("Minted: " + name);
+
+}
+//This function will be used to display the details of all minted NFTs.
+function listNFTs(){    
+    for(let i=0; i < NFTs.length; i++){
+        console.log("\nID: " + (i + 1));
+        console.log("Name: " + NFTs[i].name);
+        console.log("EyeColor: " + NFTs[i].eyecolor);
+        console.log("Age: " + NFTs[i].age);
+        console.log("Gender: " + NFTs[i].gender);
+        
+    }
+}
+// print the total number of NFTs we have minted to the console
+function getTotalSupply(){
+    console.log("\n" + NFTs.length);
+}
+
+//calling the functions
+mintNFT("Mishaelle", "Black","21", "Female");
+mintNFT("Misha", "Black","20", "Female");
+mintNFT("Añonuevo", "Black","25", "Male");
+listNFTs();
+getTotalSupply();
